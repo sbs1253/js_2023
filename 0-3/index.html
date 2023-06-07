@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+  <style>
+    input {
+      padding: 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+    .value {
+      font-size: 60px;
+      color: aquamarine;
+      padding: 10px;
+    }
+    button {
+      background-color: black;
+      color: #fff;
+      padding: 10px 40px;
+      font-size: 28px;
+      border-radius: 50px;
+    }
+  </style>
+  <body>
+    <input type="text" value="0" />
+    <input type="text" value="1" />
+
+    <h1 class="value">0</h1>
+    <button>정답</button>
+    <script>
+      const input = document.getElementsByTagName('input');
+      const value = document.querySelector('.value');
+      const button = document.querySelector('button');
+
+      input[0].value = Math.round(Math.random() * 10);
+      input[1].value = Math.round(Math.random() * 10);
+
+      button.addEventListener('click', () => {
+        sum();
+      });
+      const sum = () => {
+        value.innerText = `정답은 ${
+          Number(input[0].value) + Number(input[1].value)
+        } 입니다`;
+      };
+      sum();
+    </script>
+  </body>
+</html>

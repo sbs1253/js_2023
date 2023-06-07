@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #72989f;
+      }
+      h1 {
+        font-size: 30px;
+        padding: 20px;
+      }
+
+      .box {
+        width: 140px;
+        height: 140px;
+        /* background-color: #fff; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      img {
+        width: 140px;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        const h1 = document.querySelector('h1');
+        const box = document.querySelector('.box');
+
+        let x = 0;
+        let y = 0;
+        let targetX = 0;
+        let targetY = 0;
+        let speed = 0.03;
+        window.addEventListener('mousemove', (e) => {
+          x = e.pageX;
+          y = e.pageY;
+          h1.innerText = `x 좌표: ${x} y좌표: ${y}
+          타겟X ${targetX}  타겟Y ${targetY}`;
+        });
+
+        const loop = () => {
+          targetX += (x - targetX) * speed;
+          targetY += (y - targetY) * speed;
+          box.style.top = targetY + 'px';
+          box.style.left = targetX + 'px';
+          window.requestAnimationFrame(loop);
+        };
+        loop();
+      };
+    </script>
+  </head>
+  <body>
+    <h1></h1>
+    <div class="box">
+      <img src="./butterfly.gif" alt="butterfly" />
+    </div>
+  </body>
+</html>

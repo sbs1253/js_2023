@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(55, 57, 169);
+      }
+      .gatebox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 400px;
+      }
+      .top {
+        padding: 20px;
+        color: #fff;
+        border: 2px #fff solid;
+      }
+      .bottom {
+        border: 2px #fff solid;
+        display: flex;
+        justify-content: space-around;
+      }
+      .bottom a {
+        padding: 20px;
+        color: aliceblue;
+        width: 50%;
+        text-decoration: none;
+        transition: all 0.2s linear;
+      }
+      .bottom a:hover {
+        color: black;
+        background-color: #fff;
+      }
+      .bottom span {
+        border: 1px solid white;
+      }
+      .cursorItem {
+        position: absolute;
+        z-index: 100;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      .circle {
+        position: fixed;
+        width: 120px;
+        height: 120px;
+        background-color: #1497c2;
+        border-radius: 50%;
+        margin-left: -60px;
+        margin-top: -60px;
+        transition: all 0.2s linear;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        let x = 0;
+        let y = 0;
+        let targetX = 0;
+        let targetY = 0;
+        let speed = 0.1;
+        const cursorItem = document.querySelector('.cursorItem');
+        const circle = document.querySelector('.circle');
+        const buttonAll = document.querySelectorAll('a');
+
+        buttonAll.forEach((item) => {
+          item.addEventListener('mouseover', (e) => {
+            circle.style.transform = 'scale(.3)';
+          });
+          item.addEventListener('mouseout', (e) => {
+            circle.style.transform = 'scale(1)';
+          });
+        });
+
+        window.addEventListener('mousemove', (e) => {
+          x = e.pageX;
+          y = e.pageY;
+        });
+        const loop = () => {
+          console.log(x, y);
+          targetX += (x - targetX) * speed;
+          targetY += (y - targetY) * speed;
+          cursorItem.style.transform = `translate(${targetX}px, ${targetY}px)`;
+          window.requestAnimationFrame(loop);
+        };
+        loop();
+      };
+    </script>
+  </head>
+  <body>
+    <div class="cursorItem">
+      <span class="circle"></span>
+    </div>
+    <div class="gatebox">
+      <div class="top">
+        <p>마스크를 쓸까요?</p>
+      </div>
+      <div class="bottom">
+        <a href="#">네</a>
+        <span></span>
+        <a href="#">아니요</a>
+      </div>
+    </div>
+  </body>
+</html>
