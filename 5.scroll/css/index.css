@@ -1,0 +1,50 @@
+body {
+  background: linear-gradient(
+    150deg,
+    #13f0cf,
+    #ddf311,
+    #2d9c9a,
+    #220340,
+    #220340,
+    #000
+  );
+}
+.progress {
+  position: fixed;
+  width: 100%;
+  height: 5px;
+  background-color: #d3dace;
+  top: 0;
+  left: 0;
+}
+.progress__bar {
+  position: absolute;
+  width: 0%;
+  height: inherit;
+  background-color: #a38fd5;
+  transition: all 0.15s cubic-bezier(0.29, 0.29, 1, 1);
+}
+h1 {
+  position: fixed;
+  bottom: 40px;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+.innerWrap {
+  padding: 40px;
+}
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 70px;
+}
+.textWrap {
+  padding: 500px 30px;
+}
+
+.textWrap img {
+  width: 100%;
+}

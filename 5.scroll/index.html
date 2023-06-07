@@ -5,50 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      body {
-        background: linear-gradient(
-          150deg,
-          #13f0cf,
-          #ddf311,
-          #2d9c9a,
-          #220340,
-          #220340,
-          #000
-        );
-      }
-      h1 {
-        position: fixed;
-        padding: 20px;
-        font-size: 20px;
-      }
-      .innerWrap {
-        width: 100%;
-        height: 10000px;
-      }
-      .progress {
-        position: fixed;
-        width: 100%;
-        height: 5px;
-        background-color: #d3dace;
-        top: 0;
-        left: 0;
-      }
-      .progress__bar {
-        position: absolute;
-        width: 0%;
-        height: inherit;
-        background-color: #a38fd5;
-        transition: all 0.15s cubic-bezier(0.29, 0.29, 1, 1);
-      }
-    </style>
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
     <div class="progress">
       <div class="progress__bar"></div>
     </div>
     <h1>0%</h1>
-    <div class="innerWrap"></div>
+    <div class="innerWrap">
+      <h2 class="title">
+        깊은바다
+        <div class="textWrap">
+          <p>대게</p>
+          <img src="./images/crab.png" alt="crab" />
+        </div>
+        <div class="textWrap">
+          <p>오징어</p>
+          <img src="./images/cuttle.png" alt="crab" />
+        </div>
+        <div class="textWrap">
+          <p>방어</p>
+          <img src="./images/fish_01.png" alt="crab" />
+        </div>
+        <div class="textWrap">
+          <p>미역</p>
+          <img src="./images/seaweed.png" alt="crab" />
+        </div>
+      </h2>
+    </div>
   </body>
   <script>
     const h1 = document.querySelector('h1');
@@ -58,7 +42,7 @@
     let per;
     window.addEventListener('scroll', () => {
       scrollNum = window.scrollY;
-      per = percent(scrollNum, documentHeight) + '%';
+      per = percent(scrollNum, documentHeight) + ' METERS DEEP';
       progress.style.width = per;
       h1.innerText = per;
     });
