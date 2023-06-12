@@ -24,16 +24,20 @@ body {
   background-color: #a38fd5;
   transition: all 0.15s cubic-bezier(0.29, 0.29, 1, 1);
 }
-h1 {
+.depthWrap {
   position: fixed;
   bottom: 40px;
   font-size: 30px;
   color: #fff;
   text-align: center;
   width: 100%;
+  border-bottom: 1px dotted white;
+  padding-bottom: 10px;
 }
 .innerWrap {
+  position: relative;
   padding: 40px;
+  z-index: 100;
 }
 .title {
   width: 100%;
@@ -44,7 +48,6 @@ h1 {
 .textWrap {
   padding: 500px 30px;
 }
-
 .textWrap img {
   width: 100%;
 }
