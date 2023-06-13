@@ -1,3 +1,6 @@
+:root {
+  --main-color: #fff;
+}
 body {
   background: linear-gradient(
     150deg,
@@ -8,6 +11,7 @@ body {
     #220340,
     #000
   );
+  overflow-x: hidden !important;
 }
 .progress {
   position: fixed;
@@ -24,20 +28,30 @@ body {
   background-color: #a38fd5;
   transition: all 0.15s cubic-bezier(0.29, 0.29, 1, 1);
 }
+
+.submarine {
+  position: fixed;
+  width: 150px;
+  top: 20%;
+  transition: all 0.2s ease-out;
+  z-index: 3;
+}
 .depthWrap {
   position: fixed;
-  bottom: 40px;
+  bottom: 50px;
   font-size: 30px;
-  color: #fff;
+  color: var(--main-color);
   text-align: center;
   width: 100%;
-  border-bottom: 1px dotted white;
+  border-bottom: 2px dotted var(--main-color);
   padding-bottom: 10px;
+  font-weight: bold;
+  z-index: 100;
 }
 .innerWrap {
   position: relative;
   padding: 40px;
-  z-index: 100;
+  z-index: 2;
 }
 .title {
   width: 100%;
@@ -50,4 +64,12 @@ body {
 }
 .textWrap img {
   width: 100%;
+}
+.octopus {
+  position: fixed;
+  opacity: 0.5;
+  width: 300px;
+  bottom: -150px;
+  right: 0;
+  transition: all 1s linear;
 }

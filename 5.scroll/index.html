@@ -11,7 +11,8 @@
     <div class="progress">
       <div class="progress__bar"></div>
     </div>
-    <h1 class="depthWrap">0m</h1>
+    <img src="./images/submarine.gif" alt="submarine image" class="submarine" />
+    <h1 class="depthWrap"><span>0</span>m</h1>
     <div class="innerWrap">
       <h2 class="title">
         깊은바다
@@ -21,33 +22,20 @@
         </div>
         <div class="textWrap">
           <p>오징어</p>
-          <img src="./images/cuttle.png" alt="crab" />
+          <img src="./images/cuttle.png" alt="cuttle" />
         </div>
         <div class="textWrap">
           <p>방어</p>
-          <img src="./images/fish_01.png" alt="crab" />
+          <img src="./images/fish_01.png" alt="fish" />
         </div>
         <div class="textWrap">
           <p>미역</p>
-          <img src="./images/seaweed.png" alt="crab" />
+          <img src="./images/seaweed.png" alt="seaweed" />
         </div>
       </h2>
     </div>
+
+    <img src="./images/octo.png" alt="octo img" class="octopus" />
   </body>
-  <script>
-    const h1 = document.querySelector('h1');
-    let scrollNum = 0;
-    const documentHeight = document.body.scrollHeight - window.innerHeight;
-    let progress = document.querySelector('.progress__bar');
-    let per;
-    window.addEventListener('scroll', () => {
-      scrollNum = window.scrollY;
-      per = percent(scrollNum, documentHeight) + ' METERS DEEP';
-      progress.style.width = per;
-      h1.innerText = per;
-    });
-    const percent = (num, totalNum) => {
-      return ((num / totalNum) * 100).toFixed(0);
-    };
-  </script>
+  <script src="./js/index.js"></script>
 </html>
