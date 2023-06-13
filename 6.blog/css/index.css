@@ -1,0 +1,28 @@
+body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+header .fixed {
+  position: fixed;
+  color: #000;
+  background-color: antiquewhite;
+}
+
+.headerWrap {
+  position: relative;
+  padding: 10px 20px;
+}
+
+.headerWrap h1 {
+  font-style: 150px;
+  color: #fff;
+}
